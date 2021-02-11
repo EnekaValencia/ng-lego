@@ -1,0 +1,19 @@
+<span *ngIf="lego">
+<div class="card" style="width: 18rem;">
+  <div class="card-body" >
+    <img src="{{lego.imagen}}" class="card-img-top" src="..." alt="{{ lego.paquete }}-{{ lego.modelo}}">
+    <div class="card-header">      
+      <h5 class="card-title">Paquete:
+        <a [routerLink]="['/legos', lego.id]"> {{ lego.paquete }} - {{ lego.modelo}} </a>
+      </h5>
+      <h6 class="card-subtitle mb-2 text-muted">Descripción: {{ lego.shortDescription }}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Fecha de Creacion: {{ lego.fechaCreacion }}</h6>
+    </div>
+    <p class="card-text">Tiendas de Venta:</p>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let tienda of lego.tiendas">{{ tienda }}</li>
+    </ul>
+    <hr>
+    <h6 class="card-subtitle mb-2 text-muted">Precio: {{ lego.precio }}€</h6>
+  </div>
+</div></span>
